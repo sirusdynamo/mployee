@@ -2,6 +2,8 @@ class Config(object):
     """
     common configurations
     """
+    DEBUG = False
+    TESTING = False
 
     #put any configuration here that is common to all environments
 
