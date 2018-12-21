@@ -1,5 +1,5 @@
 from flask_login import UserMixin
-from werkeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 from app import db, login_manager
 
@@ -29,10 +29,7 @@ class Employee(UserMixin, db.Model):
 
     @property
     def password(self):
-    """
-    Prevent password from being accessed
-    """
-    raise AttributeError('Password is  not a readable attribute')
+        raise AttributeError("Password cannot be read")
 
 
     @password.setter
